@@ -99,9 +99,8 @@ function getAplhaTransactions(empId, id, transactions){
         return t.type == ALPHA_TYPE && t.employee.id == empId;
     }).map(o=>o.transactionID);
 
+    console.log("Alpha Transactions are",alphaTransactions)
     var post_req = {id:id,result:alphaTransactions};
-
-    console.log("Submitting Below Post Request to Post Endpoint",post_req);
 
     submitTransactions(post_req);
 }
